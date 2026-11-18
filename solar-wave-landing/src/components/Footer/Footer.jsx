@@ -17,7 +17,7 @@ function Footer() {
                     <div className="w-full p-6 md:w-1/2 lg:w-2/12">
                         <div className="h-full">
                             <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
-                                Company
+                                Explore Solar Wave
                             </h3>
                             <ul>
                                 <li className="mb-4">
@@ -25,7 +25,7 @@ function Footer() {
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
                                         to="/"
                                     >
-                                        Features
+                                        Solar Solutions
                                     </Link>
                                 </li>
                                 <li className="mb-4">
@@ -33,7 +33,7 @@ function Footer() {
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
                                         to="/"
                                     >
-                                        Pricing
+                                        How It Works
                                     </Link>
                                 </li>
                                 <li className="mb-4">
@@ -41,7 +41,7 @@ function Footer() {
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
                                         to="/"
                                     >
-                                        Affiliate Program
+                                        Partner With Us
                                     </Link>
                                 </li>
                                 <li>
@@ -49,7 +49,7 @@ function Footer() {
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
                                         to="/"
                                     >
-                                        Press Kit
+                                        Solar Projects
                                     </Link>
                                 </li>
                             </ul>
@@ -58,7 +58,7 @@ function Footer() {
                     <div className="w-full p-6 md:w-1/2 lg:w-2/12">
                         <div className="h-full">
                             <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
-                                Support
+                                Get Started
                             </h3>
                             <ul>
                                 <li className="mb-4">
@@ -66,7 +66,7 @@ function Footer() {
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
                                         to="/"
                                     >
-                                        Account
+                                        Request a Site Assessment
                                     </Link>
                                 </li>
                                 <li className="mb-4">
@@ -74,7 +74,7 @@ function Footer() {
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
                                         to="/"
                                     >
-                                        Help
+                                        FAQs
                                     </Link>
                                 </li>
                                 <li className="mb-4">
@@ -90,7 +90,7 @@ function Footer() {
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
                                         to="/"
                                     >
-                                        Customer Support
+                                        Call or WhatsApp Us
                                     </Link>
                                 </li>
                             </ul>
@@ -99,7 +99,7 @@ function Footer() {
                     <div className="w-full p-6 md:w-1/2 lg:w-3/12">
                         <div className="h-full">
                             <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
-                                Legals
+                                Important Information
                             </h3>
                             <ul>
                                 <li className="mb-4">
@@ -123,7 +123,7 @@ function Footer() {
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
                                         to="/"
                                     >
-                                        Licensing
+                                        Subsidy & Eligibility Disclaimer
                                     </Link>
                                 </li>
                             </ul>
