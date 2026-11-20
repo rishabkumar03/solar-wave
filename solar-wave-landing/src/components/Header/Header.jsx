@@ -1,47 +1,47 @@
-import React from 'react'
-import {Container, Logo} from "../index"
-import { Link } from 'react-router-dom'
-import {useSelector} from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+const navigation = [
+  { label: 'Solutions', href: '#solutions' },
+  { label: 'Our approach', href: '#approach' },
+  { label: 'Process', href: '#process' },
+  { label: 'Partners', href: '#partners' },
+]
 
 function Header() {
-
-    const navigate = useNavigate()
-
-    const naItems = [
-        {
-            name: 'Home',
-            slug: "/",
-            active: true
-        }
-    ]
-
   return (
-    <header className='py-3 shadow bg-gray-500'>
-        <Container>
-            <nav className='flex'>
-                <div className='mr-4'>
-                    <Link to='/'>
-                        <Logo width='70px'/>
-                    </Link>
-                </div>
-                <ul className='flex ml-auto'>
-                    {navItems.map((item) => 
-                        item.active ? (
-                            <li key={item.name}>
-                                <button 
-                                    onClick={() => navigate(item.slug)}
-                                    className='inline-block px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'>
-                                        {item.name}
-                                </button>
-                            </li>
-                        ) : null
-                    )}
-                </ul>
-            </nav>
-        </Container>
+    <header className="site-header">
+      <div className="page-shell header-inner">
+        <a className="brand-link" href="#top" aria-label="Solar Wave home">
+          <span className="brand-mark" aria-hidden="true">
+            <img
+              className="brand-mark-image"
+              src={import.meta.env.BASE_URL + 'images/rounded-logo.png'}
+              alt=""
+            />
+          </span>
+          <span className="brand-type">
+            <strong className="brand-name">
+              <span className="brand-word-solar">SOLAR</span>
+              <span className="brand-word-wave">WAVE</span>
+            </strong>
+            <small>SAGAR PROPERTY AND FINANCIALS</small>
+          </span>
+        </a>
+        <nav className="desktop-nav" aria-label="Main navigation">
+          {navigation.map((item) => <a href={item.href} key={item.label}>{item.label}</a>)}
+        </nav>
+        <a className="header-cta" href="#contact">
+          Talk to our team <span aria-hidden="true">↗</span>
+        </a>
+        <details className="mobile-nav">
+          <summary aria-label="Open navigation"><span /><span /><span /></summary>
+          <nav aria-label="Mobile navigation">
+            {navigation.map((item) => <a href={item.href} key={item.label}>{item.label}</a>)}
+            <a href="#contact">Talk to our team</a>
+          </nav>
+        </details>
+      </div>
     </header>
   )
 }
 
+export { Header }
 export default Header

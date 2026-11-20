@@ -1,138 +1,47 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Logo from '../Logo'
+import { Logo } from '../index'
 
-function Footer() {
+const Footer = () => {
   return (
-    <section className="relative overflow-hidden py-10 bg-gray-400 border border-t-2 border-t-black">
-            <div className="relative z-10 mx-auto max-w-7xl px-4">
-                <div className="-m-6 flex flex-wrap">
-                    <div className="w-full p-6 md:w-1/2 lg:w-5/12">
-                        <div className="flex h-full flex-col justify-between">
-                            <div className="mb-4 inline-flex items-center">
-                                <Logo width="100px" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="w-full p-6 md:w-1/2 lg:w-2/12">
-                        <div className="h-full">
-                            <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
-                                Explore Solar Wave
-                            </h3>
-                            <ul>
-                                <li className="mb-4">
-                                    <Link
-                                        className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
-                                    >
-                                        Solar Solutions
-                                    </Link>
-                                </li>
-                                <li className="mb-4">
-                                    <Link
-                                        className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
-                                    >
-                                        How It Works
-                                    </Link>
-                                </li>
-                                <li className="mb-4">
-                                    <Link
-                                        className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
-                                    >
-                                        Partner With Us
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
-                                    >
-                                        Solar Projects
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="w-full p-6 md:w-1/2 lg:w-2/12">
-                        <div className="h-full">
-                            <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
-                                Get Started
-                            </h3>
-                            <ul>
-                                <li className="mb-4">
-                                    <Link
-                                        className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
-                                    >
-                                        Request a Site Assessment
-                                    </Link>
-                                </li>
-                                <li className="mb-4">
-                                    <Link
-                                        className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
-                                    >
-                                        FAQs
-                                    </Link>
-                                </li>
-                                <li className="mb-4">
-                                    <Link
-                                        className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
-                                    >
-                                        Contact Us
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
-                                    >
-                                        Call or WhatsApp Us
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="w-full p-6 md:w-1/2 lg:w-3/12">
-                        <div className="h-full">
-                            <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
-                                Important Information
-                            </h3>
-                            <ul>
-                                <li className="mb-4">
-                                    <Link
-                                        className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
-                                    >
-                                        Terms &amp; Conditions
-                                    </Link>
-                                </li>
-                                <li className="mb-4">
-                                    <Link
-                                        className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
-                                    >
-                                        Privacy Policy
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
-                                    >
-                                        Subsidy & Eligibility Disclaimer
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <footer className="site-footer">
+      <div className="page-shell footer-main">
+        <div className="footer-brand">
+          <a href="#top" aria-label="Solar Wave home"><Logo /></a>
+          <p>Helping homes and businesses in Ranchi explore rooftop solar with clear guidance and a considered plan.</p>
+          <div className="footer-socials">
+            <a href="https://www.instagram.com/solarwaveranchi/" target="_blank" rel="noreferrer" aria-label="Solar Wave on Instagram">Instagram <span>↗</span></a>
+            <a href="https://youtube.com/@solarwaveranchi" target="_blank" rel="noreferrer" aria-label="Solar Wave on YouTube">YouTube <span>↗</span></a>
+          </div>
+        </div>
+        <div className="footer-column">
+          <h3>EXPLORE</h3>
+          <a href="#solutions">Home & business solar</a>
+          <a href="#approach">Our approach</a>
+          <a href="#quality">Equipment & quality</a>
+          <a href="#partners">Partner with us</a>
+        </div>
+        <div className="footer-column">
+          <h3>GET STARTED</h3>
+          <a href="#process">How it works</a>
+          <a href="#scheme">Scheme guidance</a>
+          <a href="#faq">FAQs</a>
+          <a href="#contact">Start an enquiry</a>
+        </div>
+        <div className="footer-column footer-contact">
+          <h3>CONTACT SOLAR WAVE</h3>
+          <a href="tel:+919835474174">+91 98354 74174</a>
+          <a href="tel:+919470161421">+91 94701 61421</a>
+          <a href="https://wa.me/919835474174" target="_blank" rel="noreferrer">WhatsApp our team ↗</a>
+          <span>Ranchi, Jharkhand</span>
+        </div>
+      </div>
+      <div className="page-shell footer-bottom">
+        <span>© {new Date().getFullYear()} Solar Wave. All rights reserved.</span>
+        <span>Scheme eligibility and benefits are subject to current official rules and approvals.</span>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
   )
 }
 
 export default Footer
+

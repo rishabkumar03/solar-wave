@@ -1,8 +1,12 @@
-import React from 'react'
-
-function Logo({ width = '100px' }) {
+function Logo() {
   return (
-    <div>Logo</div>
+    <span className="solar-logo-crop">
+      <img
+        src={import.meta.env.BASE_URL + 'images/solar-wave-logo.png'}
+        alt="Solar Wave — Sagar Property and Financials"
+        loading="lazy"
+      />
+    </span>
   )
 }
 

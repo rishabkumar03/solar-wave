@@ -1,63 +1,99 @@
-import React, {useState} from "react";
-import {Link, useNavigate} from 'react-router-dom'
-import {Button, Input, Logo} from "./index"
-import { useDispatch } from "react-redux";
-import {useForm} from "react-hook-form"
+import { useState } from 'react'
 
-function Form() {
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
-    const {register, handleSubmit} = useForm()
-    const [error, setError] = useState("")
+const whatsappLink = 'https://wa.me/919835474174?text=Hello%20Solar%20Wave%2C%20I%27d%20like%20to%20discuss%20rooftop%20solar.'
 
-    return (
-        <div className="flex items-center justify-center w-full">
-            <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-                <div className="mb-2 flex justify-center">
-                    <span className="inline-block w-full max-w-25">
-                        <Logo width="100%"/>
-                    </span>
-                </div>
-                <h2 className="text-center text-2xl font-bold leading-tight">Submit Form</h2>
-                <p className="mt-2 text-center text-base text-black/60">
-                    <div className="font-medium text-primary transition-all duration-200 hover:underline"></div>
-                </p>
-                {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-                <form onSubmit={handleSubmit(form)} className='mt-8'>
-                    <div className="space-y-5">
-                        <Input
-                            label="Email: "
-                            placeholder="Enter your email"
-                            type="email"
-                            {...register("email", {
-                                required: false,
-                                validate: {
-                                    matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Email address must be a valid address",
-                                }
-                            })}
-                        />
-                        <Input
-                            label="Mobile: "
-                            placeholder="Enter your mobile number"
-                            type="phone"
-                            {...register("mobile", {
-                                required: true,
-                                validate: {
-                                    matchPattern: (value) => /^(?:\+91|91|0)?[6-9]\d{9}$/.test(value) || "Mobile number should be valid"
-                                }
-                            })}
-                        />
-                        <Button
-                            type="submit"
-                            className='w-full'
-                        >
-                            Submit Details
-                        </Button>
-                    </div>
-                </form>
-            </div>
+function EnquiryForm() {
+  const [status, setStatus] = useState({ kind: '', message: '' })
+  const [submitting, setSubmitting] = useState(false)
+
+  async function handleSubmit(event) {
+    event.preventDefault()
+    setStatus({ kind: '', message: '' })
+    const form = event.currentTarget
+    if (!form.reportValidity()) return
+
+    const fields = new FormData(form)
+    const payload = {
+      name: String(fields.get('name') || '').trim(),
+      phone: String(fields.get('phone') || '').trim(),
+      interest: String(fields.get('interest') || ''),
+      message: String(fields.get('message') || '').trim(),
+      source: 'Solar Wave website',
+      submittedAt: new Date().toISOString(),
+    }
+    const endpoint = import.meta.env.VITE_LEAD_ENDPOINT
+
+    if (!endpoint) {
+      setStatus({
+        kind: 'info',
+        message: 'Online form storage is not connected yet. Please contact Solar Wave using the WhatsApp option below.',
+      })
+      return
+    }
+
+    setSubmitting(true)
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      if (!response.ok) throw new Error('The form endpoint returned an error.')
+      form.reset()
+      setStatus({ kind: 'success', message: 'Thank you. Your enquiry has been sent to Solar Wave.' })
+    } catch {
+      setStatus({
+        kind: 'error',
+        message: 'Your enquiry could not be sent right now. Please try again or contact Solar Wave on WhatsApp.',
+      })
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  return (
+    <div className="enquiry-card">
+      <div className="form-heading">
+        <span className="form-kicker">ENQUIRY</span>
+        <h3>Let’s start with a conversation.</h3>
+      </div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          <span>Your name</span>
+          <input name="name" type="text" autoComplete="name" placeholder="e.g. Nikhil Kumar" required minLength="2" />
+        </label>
+        <div className="form-row">
+          <label>
+            <span>Phone number</span>
+            <input name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="+91" required pattern="(?:\+91|91|0)?[6-9][0-9]{9}" title="Enter a valid Indian mobile number." />
+          </label>
+          <label>
+            <span>I’m interested in</span>
+            <select name="interest" defaultValue="" required>
+              <option value="" disabled>Select one</option>
+              <option value="Home rooftop solar">Home solar</option>
+              <option value="Business rooftop solar">Business solar</option>
+              <option value="Solar partnership">Partnership</option>
+              <option value="Other solar enquiry">Something else</option>
+            </select>
+          </label>
         </div>
-    )
+        <label>
+          <span>Anything you’d like us to know <small>(optional)</small></span>
+          <textarea name="message" rows="3" placeholder="Tell us about your roof, site, or question." />
+        </label>
+        <button className="button button-primary form-submit" type="submit" disabled={submitting}>
+          {submitting ? 'Sending…' : 'Send Enquiry'} <span aria-hidden="true">↗</span>
+        </button>
+        {status.message && <p className={'form-status form-status-' + status.kind} role="status">{status.message}</p>}
+        <p className="form-privacy">Your details are used to respond to this enquiry. Do not include sensitive financial information.</p>
+      </form>
+      <div className="form-divider"><span>OR</span></div>
+      <a className="form-whatsapp" href={whatsappLink} target="_blank" rel="noreferrer">
+        <span className="whatsapp-dot">W</span> Continue on WhatsApp
+      </a>
+    </div>
+  )
 }
 
-export default Form
+export default EnquiryForm
