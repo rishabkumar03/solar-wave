@@ -1,6 +1,19 @@
 import { useState } from 'react'
+import { iconAssets } from '../App'
 
 const whatsappLink = 'https://wa.me/919835474174?text=Hello%20Solar%20Wave%2C%20I%27d%20like%20to%20discuss%20rooftop%20solar.'
+
+const Icon = ({ name, size = 22 }) => {
+  if (iconAssets[name]) {
+    return <img className="solar-icon-image" src={iconAssets[name]} width={size} height={size} alt="" aria-hidden="true" />
+  }
+
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 12h14m-6-6 6 6-6 6" />
+    </svg>
+  )
+}
 
 function EnquiryForm() {
   const [status, setStatus] = useState({ kind: '', message: '' })
@@ -90,7 +103,7 @@ function EnquiryForm() {
       </form>
       <div className="form-divider"><span>OR</span></div>
       <a className="form-whatsapp" href={whatsappLink} target="_blank" rel="noreferrer">
-        <span className="whatsapp-dot">W</span> Continue on WhatsApp
+        <span className="form-whatsapp-icon"><Icon name="whatsApp" size={18} /></span> Continue on WhatsApp
       </a>
     </div>
   )

@@ -5,31 +5,43 @@ import EnquiryForm from './components/EnquiryForm'
 import ImageSlot from './components/ImageSlot'
 import './App.css'
 
+const iconAssets = {
+  home: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155214/003-home.png',
+  business: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155214/005-store.png',
+  sun: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155214/010-sun.png',
+  check: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155214/006-checklist.png',
+  roof: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155214/003-home.png',
+  plan: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155215/007-paper.png',
+  install: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155215/008-like.png',
+  leaf: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155214/002-tea.png',
+  bolt: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155215/011-thunder.png',
+  pen: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155214/009-fountain-pen.png',
+  solarPanel: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795175218/solar-cell.png',
+  call: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155215/012-phone-call.png',
+  location: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155215/013-map.png',
+  whatsApp: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795261621/apple.png',
+  instagram: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795261622/instagram.png',
+  youTube: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795261620/youtube.png',
+  facebook: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795261620/facebook.png'
+}
+
 const Icon = ({ name, size = 22 }) => {
-  const shapes = {
-    home: <><path d="m3 10 9-7 9 7" /><path d="M5 9v11h14V9M9 20v-7h6v7" /></>,
-    business: <><path d="M4 21V5l8-3 8 3v16M2 21h20M8 8h1m6 0h1M8 12h1m6 0h1M10 21v-5h4v5" /></>,
-    sun: <><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></>,
-    check: <><path d="m5 12 4 4L19 6" /><circle cx="12" cy="12" r="9" /></>,
-    roof: <><path d="m3 11 9-7 9 7" /><path d="M5 10v10h14V10M9 20v-6h6v6" /><path d="M8 9h8" /></>,
-    plan: <><rect x="4" y="3" width="16" height="18" rx="2" /><path d="M8 8h8M8 12h8m-8 4h5" /></>,
-    install: <><path d="m14 7 3-3 3 3-3 3" /><path d="m17 7-7 7" /><path d="m5 19 5-5 4 4-5 5H5z" /><path d="m14 14 5 5" /></>,
-    leaf: <><path d="M20 4c-8 0-14 3-14 10a6 6 0 0 0 6 6c7 0 10-6 8-16Z" /><path d="M4 21c3-5 6-8 12-11" /></>,
-    arrow: <><path d="M5 12h14m-6-6 6 6-6 6" /></>,
-    bolt: <path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z" />,
+  if (iconAssets[name]) {
+    return <img className="solar-icon-image" src={iconAssets[name]} width={size} height={size} alt="" aria-hidden="true" />
   }
+
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      {shapes[name] || shapes.sun}
+      <path d="M5 12h14m-6-6 6 6-6 6" />
     </svg>
   )
 }
 
 const steps = [
   { number: '01', icon: 'plan', title: 'Discuss your goals', text: 'We talk through your electricity use, property type, and what you want solar to do for you.' },
-  { number: '02', icon: 'roof', title: 'Explore system options', text: 'We explain suitable system choices and answer questions about components and process.' },
-  { number: '03', icon: 'check', title: 'Get a clear proposal', text: 'Review the proposed equipment, scope, warranty details, and project milestones.' },
-  { number: '04', icon: 'install', title: 'Plan installation and handover', text: 'Move forward based on the agreed scope, applicable approvals, installation, and handover.' },
+  { number: '02', icon: 'solarPanel', title: 'Explore system options', text: 'We explain suitable system choices and answer questions about components and process.' },
+  { number: '03', icon: 'install', title: 'Get a clear proposal', text: 'Review the proposed equipment, scope, warranty details, and project milestones.' },
+  { number: '04', icon: 'pen', title: 'Plan installation and handover', text: 'Move forward based on the agreed scope, applicable approvals, installation, and handover.' },
 ]
 
 function App() {
@@ -96,13 +108,12 @@ function App() {
           </div>
         </section>
 
-        {/* space for modiji banner */}
-
         <section className="intro-strip" aria-label="Solar Wave approach">
           <div className="page-shell intro-strip-grid">
-            <div><span className="strip-icon"><Icon name="roof" size={19} /></span><span><strong>Begin with your needs</strong><small>Goals and electricity use</small></span></div>
-            <div><span className="strip-icon"><Icon name="plan" size={19} /></span><span><strong>Understand the proposal</strong><small>Scope and equipment options</small></span></div>
-            <div><span className="strip-icon"><Icon name="check" size={19} /></span><span><strong>Know the next steps</strong><small>Process, installation, handover</small></span></div>
+            <div><span className="strip-icon"><img className="strip-icon-image" src={import.meta.env.BASE_URL + 'images/benefit-icons/001-rupee.png'} alt="" aria-hidden="true" /></span><span><strong>Easy EMI Available</strong></span></div>
+            <div><span className="strip-icon"><img className="strip-icon-image strip-icon-image-leaf" src={import.meta.env.BASE_URL + 'images/benefit-icons/002-tea.png'} alt="" aria-hidden="true" /></span><span><strong>Better for the Environment</strong></span></div>
+            <div><span className="strip-icon"><img className="strip-icon-image" src={import.meta.env.BASE_URL + 'images/benefit-icons/003-home.png'} alt="" aria-hidden="true" /></span><span><strong>Clean Energy for Every Home</strong></span></div>
+            <div><span className="strip-icon"><img className="strip-icon-image" src={import.meta.env.BASE_URL + 'images/benefit-icons/004-settings.png'} alt="" aria-hidden="true" /></span><span><strong>Government Subsidy Benefit</strong></span></div>
           </div>
         </section>
 
@@ -117,7 +128,7 @@ function App() {
               <article className="solution-card">
                 <ImageSlot variant="home" label="Residential rooftop" file="/images/solar-wave-home-rooftop.png" alt="Residential rooftop solar image" />
                 <div className="solution-card-content">
-                  <div className="solution-icon"><Icon name="home" /></div>
+                  <div className="solution-icon"><Icon name="home" size={40} /></div>
                   <p className="card-kicker">FOR HOMEOWNERS</p>
                   <h3>Solar for your home</h3>
                   <p>Explore how rooftop solar may fit your home, electricity use, and available roof area.</p>
@@ -127,7 +138,7 @@ function App() {
               <article className="solution-card">
                 <ImageSlot variant="business" label="Local business rooftop" file="/images/solar-wave-business-rooftop.png" alt="Shop or business rooftop solar image" />
                 <div className="solution-card-content">
-                  <div className="solution-icon solution-icon-green"><Icon name="business" /></div>
+                  <div className="solution-icon solution-icon-green"><Icon name="business" size={40} /></div>
                   <p className="card-kicker">FOR SHOPS & BUSINESSES</p>
                   <h3>Solar for your business</h3>
                   <p>Discuss your operating needs, site conditions, and the system scope that could suit your business.</p>
@@ -138,8 +149,32 @@ function App() {
           </div>
         </section>
 
-        
-
+        <section className="scheme-section scheme-banner-section" id="scheme-modiji" aria-label="PM Surya Ghar rooftop solar scheme">
+          <div className="scheme-banner-frame">
+            <img
+              className="scheme-banner-image"
+              src="https://res.cloudinary.com/gicu3fz6/image/upload/v1795260694/%E0%A4%B8%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%AF_%E0%A4%98%E0%A4%B0.jpg.jpg"
+              alt="PM Surya Ghar campaign banner with the Government of India scheme artwork, clean-energy pledge, and Prime Minister Narendra Modi."
+              width="1896"
+              height="296"
+              loading="eager"
+              decoding="async"
+            />
+            <div className="scheme-banner-actions">
+              <a
+                className="button scheme-banner-button scheme-banner-button-primary"
+                href="https://solarrooftop.pmsuryaghar.gov.in/notification/172_notification.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View official notification <Icon name="arrow" size={18} />
+              </a>
+              <a className="button scheme-banner-button scheme-banner-button-secondary" href="#contact">
+                Contact us <Icon name="arrow" size={18} />
+              </a>
+            </div>
+          </div>
+        </section>
 
         <section className="section section-clarity" id="approach">
           <div className="page-shell clarity-grid">
@@ -192,7 +227,6 @@ function App() {
                   photoLabel="ILLUSTRATIVE EQUIPMENT"
                 />
               </div>
-              <div className="quality-photo-caption"><span className="caption-line" /> COMPONENTS, EXPLAINED CLEARLY</div>
             </div>
             <div className="quality-copy">
               <p className="eyebrow">QUALITY YOU CAN UNDERSTAND</p>
@@ -201,7 +235,7 @@ function App() {
               <div className="quality-list">
                 <div><span className="quality-list-icon"><Icon name="sun" size={18} /></span><span><strong>Panel options</strong><small>Review the proposed make, model, specifications, and warranty.</small></span></div>
                 <div><span className="quality-list-icon"><Icon name="bolt" size={18} /></span><span><strong>System components</strong><small>Understand inverter, cabling, structure, and electrical protection in the scope.</small></span></div>
-                <div><span className="quality-list-icon"><Icon name="check" size={18} /></span><span><strong>Written details</strong><small>Confirm final equipment, availability, warranty, and milestones in your proposal.</small></span></div>
+                <div><span className="quality-list-icon"><Icon name="pen" size={18} /></span><span><strong>Written details</strong><small>Confirm final equipment, availability, warranty, and milestones in your proposal.</small></span></div>
               </div>
               <p className="quality-note">Equipment brands shown in proposals are subject to the final site-specific scope and availability.</p>
             </div>
@@ -212,7 +246,7 @@ function App() {
 
         <section className="scheme-section scheme-guidance-section" id="scheme-guidance">
           <div className="page-shell scheme-grid">
-            <div className="scheme-badge"><Icon name="sun" size={27} /><span>PM<br />SURYA GHAR</span></div>
+            <div><img src='https://res.cloudinary.com/gicu3fz6/image/upload/v1795159507/Cheerful_Solar_Panel_Mascot-removebg-preview.png' size={27} /></div>
             <div className="scheme-copy">
               <p className="eyebrow eyebrow-light">GUIDANCE ON ELIGIBILITY & PROCESS</p>
               <h2>Government support may be available for <span>eligible homes.</span></h2>
@@ -269,10 +303,10 @@ function App() {
               <h2>Take the first step toward a <span>clearer solar plan.</span></h2>
               <p>Tell us a little about your solar plans. Solar Wave will respond to discuss possible options and next steps.</p>
               <div className="contact-direct">
-                <a href="tel:+919835474174"><span className="contact-direct-icon"><Icon name="bolt" size={17} /></span><span><small>CALL SOLAR WAVE</small><strong>+91 98354 74174</strong></span></a>
-                <a href="https://wa.me/919835474174?text=Hello%20Solar%20Wave%2C%20I%27d%20like%20to%20discuss%20rooftop%20solar." target="_blank" rel="noreferrer"><span className="contact-direct-icon"><Icon name="arrow" size={17} /></span><span><small>WHATSAPP</small><strong>Message our team</strong></span></a>
+                <a href="tel:+919835474174"><span className="contact-direct-icon"><Icon name="call" size={18} /></span><span><small>CALL SOLAR WAVE</small><strong>+91 98354 74174</strong></span></a>
+                <a href="https://wa.me/919835474174?text=Hello%20Solar%20Wave%2C%20I%27d%20like%20to%20discuss%20rooftop%20solar." target="_blank" rel="noopener noreferrer"><span className="contact-direct-icon"><Icon name="whatsApp" size={18} /></span><span><small>WHATSAPP</small><strong>Message our team</strong></span></a>
               </div>
-              <div className="contact-location"><Icon name="roof" size={18} /><span>Ranchi, Jharkhand</span></div>
+              <div className="contact-location"><Icon name="location" size={18} /><span>Ranchi, Jharkhand</span></div>
             </div>
             <EnquiryForm />
           </div>
@@ -284,11 +318,4 @@ function App() {
 }
 
 export default App
-
-
-
-
-
-
-
-
+export { iconAssets }
