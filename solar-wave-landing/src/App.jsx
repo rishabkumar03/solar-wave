@@ -6,11 +6,12 @@ import ImageSlot from './components/ImageSlot'
 import './App.css'
 
 const iconAssets = {
+  rupee: 'https://res.cloudinary.com/z3uu8k9m/image/upload/v1795274748/001-rupee.png',
+  setting: 'https://res.cloudinary.com/z3uu8k9m/image/upload/v1795274753/004-settings.png',
   home: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155214/003-home.png',
   business: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155214/005-store.png',
   sun: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155214/010-sun.png',
   check: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155214/006-checklist.png',
-  roof: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155214/003-home.png',
   plan: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155215/007-paper.png',
   install: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155215/008-like.png',
   leaf: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795155214/002-tea.png',
@@ -110,10 +111,10 @@ function App() {
 
         <section className="intro-strip" aria-label="Solar Wave approach">
           <div className="page-shell intro-strip-grid">
-            <div><span className="strip-icon"><img className="strip-icon-image" src={import.meta.env.BASE_URL + 'images/benefit-icons/001-rupee.png'} alt="" aria-hidden="true" /></span><span><strong>Easy EMI Available</strong></span></div>
-            <div><span className="strip-icon"><img className="strip-icon-image strip-icon-image-leaf" src={import.meta.env.BASE_URL + 'images/benefit-icons/002-tea.png'} alt="" aria-hidden="true" /></span><span><strong>Better for the Environment</strong></span></div>
-            <div><span className="strip-icon"><img className="strip-icon-image" src={import.meta.env.BASE_URL + 'images/benefit-icons/003-home.png'} alt="" aria-hidden="true" /></span><span><strong>Clean Energy for Every Home</strong></span></div>
-            <div><span className="strip-icon"><img className="strip-icon-image" src={import.meta.env.BASE_URL + 'images/benefit-icons/004-settings.png'} alt="" aria-hidden="true" /></span><span><strong>Government Subsidy Benefit</strong></span></div>
+            <div><span className="strip-icon"><Icon name="rupee" /></span><span><strong>Easy EMI Available</strong></span></div>
+            <div><span className="strip-icon"><Icon name="leaf"/></span><span><strong>Better for the Environment</strong></span></div>
+            <div><span className="strip-icon"><Icon name="home" /></span><span><strong>Clean Energy for Every Home</strong></span></div>
+            <div><span className="strip-icon"><Icon name="setting" /></span><span><strong>Government Subsidy Benefit</strong></span></div>
           </div>
         </section>
 
@@ -132,7 +133,7 @@ function App() {
                   <p className="card-kicker">FOR HOMEOWNERS</p>
                   <h3>Solar for your home</h3>
                   <p>Explore how rooftop solar may fit your home, electricity use, and available roof area.</p>
-                  <a className="text-link" href="#contact">Ask about home solar <Icon name="arrow" size={17} /></a>
+                  <a className="text-link" href="/solar-for-home">Explore home solar <Icon name="arrow" size={17} /></a>
                 </div>
               </article>
               <article className="solution-card">
@@ -303,10 +304,11 @@ function App() {
               <h2>Take the first step toward a <span>clearer solar plan.</span></h2>
               <p>Tell us a little about your solar plans. Solar Wave will respond to discuss possible options and next steps.</p>
               <div className="contact-direct">
-                <a href="tel:+919835474174"><span className="contact-direct-icon"><Icon name="call" size={18} /></span><span><small>CALL SOLAR WAVE</small><strong>+91 98354 74174</strong></span></a>
-                <a href="https://wa.me/919835474174?text=Hello%20Solar%20Wave%2C%20I%27d%20like%20to%20discuss%20rooftop%20solar." target="_blank" rel="noopener noreferrer"><span className="contact-direct-icon"><Icon name="whatsApp" size={18} /></span><span><small>WHATSAPP</small><strong>Message our team</strong></span></a>
+                <a href="tel:+919835474174"><span className="contact-direct-icon"><Icon name="call" size={16} /></span><span><small>CALL SOLAR WAVE</small><strong>+91 98354 74174</strong></span></a>
+                <a href="tel:+919470161421"><span className="contact-direct-icon"><Icon name="call" size={16} /></span><span><small>ALTERNATE NUMBER</small><strong>+91 94701 61421</strong></span></a>
+                <a href="https://wa.me/919835474174?text=Hello%20Solar%20Wave%2C%20I%27d%20like%20to%20discuss%20rooftop%20solar." target="_blank" rel="noopener noreferrer"><span className="contact-direct-icon"><Icon name="whatsApp" size={16} /></span><span><small>WHATSAPP</small><strong>Message our team</strong></span></a>
               </div>
-              <div className="contact-location"><Icon name="location" size={18} /><span>Ranchi, Jharkhand</span></div>
+              <div className="contact-location"><Icon name="location" size={16} /><span>Ranchi, Jharkhand</span></div>
             </div>
             <EnquiryForm />
           </div>

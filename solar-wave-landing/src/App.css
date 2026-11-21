@@ -178,13 +178,13 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .contact-copy > p:not(.eyebrow) { max-width: 430px; margin: 19px 0 0; color: rgba(255,255,255,.67); font-size: 13px; line-height: 1.8; }
 .contact-direct { display: grid; gap: 15px; margin-top: 30px; }
 .contact-direct a { display: inline-flex; align-items: center; gap: 12px; width: fit-content; }
-.contact-direct-icon { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.18); border-radius: 12px; color: var(--gold); background: rgba(255,255,255,.07); }
-.contact-direct-icon img, .contact-direct-icon svg { display: block; width: 18px; height: 18px; }
+.contact-direct-icon { width: 30px; height: 30px; border: 1px solid rgba(255,255,255,.18); border-radius: 12px; color: var(--gold); background: rgba(255,255,255,.07); }
+.contact-direct-icon img, .contact-direct-icon svg { display: block; width: 16px; height: 16px; }
 .contact-direct a > span:last-child { display: grid; gap: 4px; }
 .contact-direct small { color: rgba(255,255,255,.52); font-size: 8px; font-weight: 800; letter-spacing: .14em; }
 .contact-direct strong { color: white; font-size: 12px; }
 .contact-location { display: flex; align-items: center; gap: 8px; margin-top: 28px; color: rgba(255,255,255,.65); font-size: 10px; }
-.contact-location > img, .contact-location > svg { display: block; flex: 0 0 auto; }
+.contact-location > img, .contact-location > svg { display: block; width: 14px; height: 14px; flex: 0 0 14px; }
 .contact-location svg { color: #9bd4af; }
 
 .enquiry-card { padding: 30px; border: 1px solid rgba(255,255,255,.65); border-radius: 22px; color: #183242; background: white; box-shadow: 0 25px 70px rgba(0,0,0,.14); }
@@ -210,10 +210,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .form-privacy { margin: -2px 0 0; color: #8a989d; font-size: 9px; line-height: 1.6; }
 .form-divider { display: flex; align-items: center; gap: 12px; margin: 17px 0 13px; color: #a1acad; font-size: 8px; font-weight: 700; letter-spacing: .16em; }
 .form-divider::before, .form-divider::after { height: 1px; flex: 1; background: #e8edeb; content: ''; }
-.form-whatsapp { display: flex; min-height: 42px; align-items: center; justify-content: center; gap: 9px; border: 1px solid #dbe9df; border-radius: 999px; color: #267951; font-size: 10px; font-weight: 700; }
+.form-whatsapp { display: flex; min-height: 42px; align-items: center; justify-content: center; gap: 9px; border: 1px solid #dbe9df; border-radius: 999px; color: #267951; font-size: 11px; font-weight: 700; }
 .form-whatsapp:hover { background: #f0f8f2; }
 .form-whatsapp-icon { display: grid; width: 20px; height: 20px; flex: 0 0 20px; place-items: center; line-height: 0; }
-.form-whatsapp-icon img, .form-whatsapp-icon svg { display: block; width: 18px; height: 18px; }
+.form-whatsapp-icon img, .form-whatsapp-icon svg { display: block; width: 16px; height: 16px; }
 
 .site-footer { color: #dbe5e6; background: #0b2432; }
 .footer-main { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.15fr; gap: 42px; padding-top: 60px; padding-bottom: 43px; }
@@ -221,7 +221,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .footer-logo .brand-type small { color: #9eafb5; }
 .footer-brand > p { max-width: 290px; margin: 17px 0 18px; color: #9eb0b6; font-size: 10px; line-height: 1.8; }
 .footer-socials { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
-.footer-socials a { display: inline-flex; align-items: center; gap: 6px; color: #c2d0d3; font-size: 9px; font-weight: 600; line-height: 1.2; }
+.footer-socials a { display: inline-flex; width: 34px; height: 34px; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.13); border-radius: 50%; color: #c2d0d3; transition: border-color .2s, color .2s, background .2s; }
+.footer-socials a:hover { border-color: rgba(155,212,175,.55); color: #9bd4af; background: rgba(255,255,255,.04); }
 .footer-socials a > span { display: grid; width: 16px; height: 16px; flex: 0 0 16px; place-items: center; color: #9bd4af; line-height: 0; }
 .footer-socials img, .footer-socials svg { display: block; width: 16px; height: 16px; object-fit: contain; }
 .footer-column { display: grid; align-content: start; justify-items: start; gap: 13px; }
@@ -229,7 +230,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .footer-column a, .footer-column > span { color: #c0cccf; font-size: 10px; line-height: 1.5; transition: color .2s; }
 .footer-column a:hover { color: #9bd4af; }
 .footer-contact .footer-whatsapp-link { display: inline-flex; align-items: center; gap: 6px; }
-.footer-contact .footer-whatsapp-link img, .footer-contact .footer-whatsapp-link svg { display: block; width: 15px; height: 15px; object-fit: contain; }
+.footer-contact .footer-whatsapp-link img, .footer-contact .footer-whatsapp-link svg { display: block; width: 14px; height: 14px; object-fit: contain; }
 .footer-bottom { display: flex; min-height: 56px; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; border-top: 1px solid rgba(255,255,255,.1); color: #80969d; font-size: 8px; }
 .footer-bottom a { color: #b7c7c9; white-space: nowrap; }
 .footer-credit { white-space: nowrap; }
@@ -1291,8 +1292,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   height: 32px;
 }
 .contact-direct-icon {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
 }
 .solar-icon-image {
   display: block;
@@ -1339,6 +1340,317 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   font-size: clamp(9px, .65vw, 11px);
   font-weight: 800;
   white-space: nowrap;
+}
+
+/* Residential solar details page */
+.home-solar-hero {
+  padding: 76px 0 65px;
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(22,143,206,.1), transparent 34%),
+    radial-gradient(ellipse at 4% 100%, rgba(22,135,107,.07), transparent 30%),
+    var(--paper);
+}
+.home-solar-hero-grid {
+  display: grid;
+  grid-template-columns: .94fr 1.06fr;
+  align-items: center;
+  gap: clamp(40px, 7vw, 90px);
+}
+.home-solar-hero-copy h1 {
+  max-width: 580px;
+  margin: 0;
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(43px, 5vw, 63px);
+  font-weight: 700;
+  letter-spacing: -.065em;
+  line-height: 1.05;
+}
+.home-solar-hero-copy h1 span { color: var(--green); }
+.home-solar-hero-lead {
+  max-width: 480px;
+  margin: 19px 0 0;
+  color: #596c76;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.home-solar-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 25px;
+}
+.home-solar-hero-actions .button { min-height: 46px; }
+.home-solar-hero-actions .button span,
+.home-solar-contact-inner .button span { color: var(--gold); }
+.home-solar-independent-note {
+  max-width: 480px;
+  margin: 17px 0 0;
+  color: #839197;
+  font-size: 9px;
+  line-height: 1.65;
+}
+.home-solar-hero-visual {
+  position: relative;
+  padding: 0 0 21px 18px;
+}
+.home-solar-hero-visual::before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 38px;
+  height: 72%;
+  border-radius: 24px;
+  background: #e8f1eb;
+  content: '';
+}
+.home-solar-hero-visual .image-slot {
+  aspect-ratio: 4 / 3;
+  border-radius: 26px;
+  box-shadow: 0 20px 50px rgba(18,54,74,.12);
+}
+.home-solar-needs { background: #fff; }
+.home-solar-needs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 18px;
+}
+.home-solar-need-card {
+  min-height: 190px;
+  padding: 24px;
+  border: 1px solid #e5ece8;
+  border-radius: 16px;
+  background: #fbfcfa;
+}
+.home-solar-number,
+.home-solar-step-number {
+  color: var(--green);
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.home-solar-need-card h3,
+.home-solar-component h3,
+.home-solar-step h3 {
+  margin: 14px 0 7px;
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  letter-spacing: -.025em;
+}
+.home-solar-need-card p,
+.home-solar-component p,
+.home-solar-step p {
+  margin: 0;
+  color: #718087;
+  font-size: 11px;
+  line-height: 1.75;
+}
+.home-solar-components { background: var(--paper); }
+.home-solar-components-grid {
+  display: grid;
+  grid-template-columns: .78fr 1.22fr;
+  align-items: start;
+  gap: clamp(42px, 7vw, 88px);
+}
+.home-solar-components-intro h2 {
+  max-width: 470px;
+  margin: 0;
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(34px, 4vw, 47px);
+  font-weight: 700;
+  letter-spacing: -.06em;
+  line-height: 1.12;
+}
+.home-solar-components-intro h2 span { color: var(--green); }
+.home-solar-components-intro .section-lead { margin-top: 16px; font-size: 12px; }
+.home-solar-components-intro .text-link { margin-top: 20px; }
+.home-solar-component-list { border-top: 1px solid #dce5e1; }
+.home-solar-component {
+  display: grid;
+  grid-template-columns: 35px minmax(0,1fr);
+  gap: 15px;
+  padding: 17px 0;
+  border-bottom: 1px solid #dce5e1;
+}
+.home-solar-component .home-solar-number { padding-top: 3px; }
+.home-solar-component h3 { margin: 0 0 5px; font-size: 14px; }
+.home-solar-scheme {
+  padding: 76px 0;
+  color: white;
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(22,143,206,.17), transparent 36%),
+    linear-gradient(118deg, #0d2939, #123e50);
+}
+.home-solar-scheme-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(36px, 6vw, 76px);
+}
+.home-solar-scheme-copy h2 {
+  max-width: 520px;
+  margin: 0;
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(35px, 4.2vw, 51px);
+  letter-spacing: -.06em;
+  line-height: 1.1;
+}
+.home-solar-scheme-copy h2 span { color: #9bd4af; }
+.home-solar-scheme-copy > p:not(.eyebrow) {
+  max-width: 500px;
+  margin: 16px 0 0;
+  color: rgba(255,255,255,.71);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.home-solar-scheme-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 17px;
+  margin-top: 23px;
+}
+.home-solar-scheme-links .button { min-height: 44px; }
+.home-solar-guidelines-link {
+  color: #c3e4d7;
+  font-size: 10px;
+  font-weight: 700;
+}
+.home-solar-guidelines-link:hover { color: white; }
+.home-solar-assistance-card {
+  padding: 27px;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 19px;
+  color: var(--navy);
+  background: #fff;
+  box-shadow: 0 20px 55px rgba(0,0,0,.12);
+}
+.home-solar-assistance-kicker {
+  margin: 0;
+  color: var(--green);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  line-height: 1.5;
+}
+.home-solar-rate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+.home-solar-rate-grid > div { display: grid; gap: 6px; }
+.home-solar-rate-grid strong {
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  letter-spacing: -.06em;
+}
+.home-solar-rate-grid span { color: #718087; font-size: 10px; line-height: 1.55; }
+.home-solar-cap {
+  margin: 19px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid #e5ece8;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.home-solar-assistance-note {
+  margin: 10px 0 0;
+  color: #79878c;
+  font-size: 9px;
+  line-height: 1.7;
+}
+.home-solar-steps { background: #fff; }
+.home-solar-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  border: 1px solid #e4ebe7;
+  border-radius: 17px;
+  background: #fff;
+}
+.home-solar-step { min-height: 188px; padding: 21px; }
+.home-solar-step + .home-solar-step { border-left: 1px solid #e4ebe7; }
+.home-solar-step h3 { margin-top: 22px; font-size: 13px; }
+.home-solar-process-note {
+  max-width: 760px;
+  margin: 17px auto 0;
+  color: #829096;
+  font-size: 9px;
+  line-height: 1.7;
+  text-align: center;
+}
+.home-solar-contact-cta {
+  padding: 48px 0;
+  background: #f0f5f1;
+}
+.home-solar-contact-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+.home-solar-contact-inner .eyebrow { margin-bottom: 8px; }
+.home-solar-contact-inner h2 {
+  margin: 0;
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(27px, 3.4vw, 39px);
+  letter-spacing: -.055em;
+  line-height: 1.15;
+}
+.home-solar-contact-inner h2 span { color: var(--green); }
+.home-solar-contact-inner p:not(.eyebrow) {
+  max-width: 580px;
+  margin: 9px 0 0;
+  color: #6b7c82;
+  font-size: 11px;
+  line-height: 1.7;
+}
+@media (max-width: 1024px) {
+  .desktop-nav, .header-cta { display: none; }
+  .mobile-nav { display: block; }
+  .home-solar-hero-grid { gap: 38px; }
+  .home-solar-components-grid { gap: 42px; }
+  .home-solar-steps-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .home-solar-step:nth-child(3) { border-left: 0; border-top: 1px solid #e4ebe7; }
+  .home-solar-step:nth-child(4) { border-top: 1px solid #e4ebe7; }
+}
+@media (max-width: 760px) {
+  .contact-direct-icon { width: 28px; height: 28px; }
+  .home-solar-hero { padding: 48px 0 42px; }
+  .home-solar-hero-grid,
+  .home-solar-components-grid,
+  .home-solar-scheme-grid { grid-template-columns: 1fr; }
+  .home-solar-hero-grid { gap: 28px; }
+  .home-solar-hero-copy h1 { font-size: clamp(40px, 10vw, 54px); }
+  .home-solar-hero-visual { padding-left: 10px; }
+  .home-solar-hero-visual::before { left: 24px; }
+  .home-solar-needs-grid { grid-template-columns: 1fr; gap: 12px; }
+  .home-solar-need-card { min-height: 0; padding: 20px; }
+  .home-solar-need-card h3 { margin-top: 10px; }
+  .home-solar-components-grid { gap: 28px; }
+  .home-solar-scheme { padding: 60px 0; }
+  .home-solar-scheme-grid { gap: 28px; }
+  .home-solar-steps-grid { grid-template-columns: 1fr; }
+  .home-solar-step { min-height: 0; padding: 18px 20px; }
+  .home-solar-step + .home-solar-step,
+  .home-solar-step:nth-child(3) { border-top: 1px solid #e4ebe7; border-left: 0; }
+  .home-solar-step h3 { margin-top: 11px; }
+  .home-solar-contact-inner { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .home-solar-hero-actions { align-items: stretch; flex-direction: column; }
+  .home-solar-hero-actions .button { width: 100%; }
+  .home-solar-rate-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .home-solar-assistance-card { padding: 21px; }
+  .home-solar-scheme-links { align-items: flex-start; flex-direction: column; }
 }
 .scheme-banner-button-primary {
   border-color: rgba(255,255,255,.48);
