@@ -26,9 +26,9 @@ const iconAssets = {
   facebook: 'https://res.cloudinary.com/gicu3fz6/image/upload/v1795261620/facebook.png'
 }
 
-const Icon = ({ name, size = 22 }) => {
+const Icon = ({ name, size = 22, className = '' }) => {
   if (iconAssets[name]) {
-    return <img className="solar-icon-image" src={iconAssets[name]} width={size} height={size} alt="" aria-hidden="true" />
+    return <img className={['solar-icon-image', className].filter(Boolean).join(' ')} src={iconAssets[name]} width={size} height={size} alt="" aria-hidden="true" />
   }
 
   return (
@@ -111,10 +111,10 @@ function App() {
 
         <section className="intro-strip" aria-label="Solar Wave approach">
           <div className="page-shell intro-strip-grid">
-            <div><span className="strip-icon"><Icon name="rupee" /></span><span><strong>Easy EMI Available</strong></span></div>
-            <div><span className="strip-icon"><Icon name="leaf"/></span><span><strong>Better for the Environment</strong></span></div>
-            <div><span className="strip-icon"><Icon name="home" /></span><span><strong>Clean Energy for Every Home</strong></span></div>
-            <div><span className="strip-icon"><Icon name="setting" /></span><span><strong>Government Subsidy Benefit</strong></span></div>
+            <div><span className="strip-icon"><Icon name="rupee" size={46} className="strip-icon-image" /></span><span><strong>Easy EMI Available</strong></span></div>
+            <div><span className="strip-icon"><Icon name="leaf" size={46} className="strip-icon-image strip-icon-image-leaf" /></span><span><strong>Better for the Environment</strong></span></div>
+            <div><span className="strip-icon"><Icon name="home" size={46} className="strip-icon-image" /></span><span><strong>Clean Energy for Every Home</strong></span></div>
+            <div><span className="strip-icon"><Icon name="setting" size={46} className="strip-icon-image" /></span><span><strong>Government Subsidy Benefit</strong></span></div>
           </div>
         </section>
 
@@ -206,7 +206,7 @@ function App() {
             <div className="process-grid">
               {steps.map((step) => (
                 <article className="process-card" key={step.number}>
-                  <div className="process-top"><span className="process-icon"><Icon name={step.icon} /></span><span className="process-number">{step.number}</span></div>
+                  <div className="process-top"><span className="process-icon"><Icon name={step.icon} size={30} /></span><span className="process-number">{step.number}</span></div>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
                 </article>
@@ -234,9 +234,9 @@ function App() {
               <h2>Know what goes into <span>your system.</span></h2>
               <p className="section-lead">A proposal should make the system scope easy to review—from modules and inverter options to mounting, protection, and safety details.</p>
               <div className="quality-list">
-                <div><span className="quality-list-icon"><Icon name="sun" size={18} /></span><span><strong>Panel options</strong><small>Review the proposed make, model, specifications, and warranty.</small></span></div>
-                <div><span className="quality-list-icon"><Icon name="bolt" size={18} /></span><span><strong>System components</strong><small>Understand inverter, cabling, structure, and electrical protection in the scope.</small></span></div>
-                <div><span className="quality-list-icon"><Icon name="pen" size={18} /></span><span><strong>Written details</strong><small>Confirm final equipment, availability, warranty, and milestones in your proposal.</small></span></div>
+                <div><span className="quality-list-icon"><Icon name="sun" size={22} /></span><span><strong>Panel options</strong><small>Review the proposed make, model, specifications, and warranty.</small></span></div>
+                <div><span className="quality-list-icon"><Icon name="bolt" size={22} /></span><span><strong>System components</strong><small>Understand inverter, cabling, structure, and electrical protection in the scope.</small></span></div>
+                <div><span className="quality-list-icon"><Icon name="pen" size={22} /></span><span><strong>Written details</strong><small>Confirm final equipment, availability, warranty, and milestones in your proposal.</small></span></div>
               </div>
               <p className="quality-note">Equipment brands shown in proposals are subject to the final site-specific scope and availability.</p>
             </div>
@@ -304,11 +304,11 @@ function App() {
               <h2>Take the first step toward a <span>clearer solar plan.</span></h2>
               <p>Tell us a little about your solar plans. Solar Wave will respond to discuss possible options and next steps.</p>
               <div className="contact-direct">
-                <a href="tel:+919835474174"><span className="contact-direct-icon"><Icon name="call" size={16} /></span><span><small>CALL SOLAR WAVE</small><strong>+91 98354 74174</strong></span></a>
-                <a href="tel:+919470161421"><span className="contact-direct-icon"><Icon name="call" size={16} /></span><span><small>ALTERNATE NUMBER</small><strong>+91 94701 61421</strong></span></a>
-                <a href="https://wa.me/919835474174?text=Hello%20Solar%20Wave%2C%20I%27d%20like%20to%20discuss%20rooftop%20solar." target="_blank" rel="noopener noreferrer"><span className="contact-direct-icon"><Icon name="whatsApp" size={16} /></span><span><small>WHATSAPP</small><strong>Message our team</strong></span></a>
+                <a href="tel:+919835474174"><span className="contact-direct-icon"><Icon name="call" size={20} /></span><span><small>CALL SOLAR WAVE</small><strong>+91 98354 74174</strong></span></a>
+                <a href="tel:+919470161421"><span className="contact-direct-icon"><Icon name="call" size={20} /></span><span><small>ALTERNATE NUMBER</small><strong>+91 94701 61421</strong></span></a>
+                <a href="https://wa.me/919835474174?text=Hello%20Solar%20Wave%2C%20I%27d%20like%20to%20discuss%20rooftop%20solar." target="_blank" rel="noopener noreferrer"><span className="contact-direct-icon"><Icon name="whatsApp" size={20} /></span><span><small>WHATSAPP</small><strong>Message our team</strong></span></a>
               </div>
-              <div className="contact-location"><Icon name="location" size={16} /><span>Ranchi, Jharkhand</span></div>
+              <div className="contact-location"><Icon name="location" size={17} /><span>Ranchi, Jharkhand</span></div>
             </div>
             <EnquiryForm />
           </div>
