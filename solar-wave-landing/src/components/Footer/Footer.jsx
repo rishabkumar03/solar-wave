@@ -13,12 +13,14 @@ const Icon = ({ name, size = 22 }) => {
   )
 }
 
+const siteBase = import.meta.env.BASE_URL
+
 const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="page-shell footer-main">
         <div className="footer-brand">
-          <a href="/#top" aria-label="Solar Wave home"><Logo /></a>
+          <a href={siteBase + '#top'} aria-label="Solar Wave home"><Logo /></a>
           <p>Helping homes and businesses in Ranchi explore rooftop solar with clear guidance and a considered plan.</p>
           <div className="footer-socials">
             <a href="https://www.instagram.com/solarwaveranchi/" target="_blank" rel="noreferrer" aria-label="Solar Wave on Instagram"><span><Icon name="instagram" size={16} /></span></a>
@@ -28,17 +30,17 @@ const Footer = () => {
         </div>
         <div className="footer-column">
           <h3>EXPLORE</h3>
-          <a href="/#solutions">Home & business solar</a>
-          <a href="/#approach">Our approach</a>
-          <a href="/#quality">Equipment & quality</a>
-          <a href="/#partners">Partner with us</a>
+          <a href={siteBase + '#solutions'}>Home & business solar</a>
+          <a href={siteBase + '#approach'}>Our approach</a>
+          <a href={siteBase + '#quality'}>Equipment & quality</a>
+          <a href={siteBase + '#partners'}>Partner with us</a>
         </div>
         <div className="footer-column">
           <h3>GET STARTED</h3>
-          <a href="/#process">How it works</a>
-          <a href="/#scheme-guidance">Scheme guidance</a>
-          <a href="/#faq">FAQs</a>
-          <a href="/#contact">Start an enquiry</a>
+          <a href={siteBase + '#process'}>How it works</a>
+          <a href={siteBase + '#scheme-guidance'}>Scheme guidance</a>
+          <a href={siteBase + '#faq'}>FAQs</a>
+          <a href={siteBase + '#contact'}>Start an enquiry</a>
         </div>
         <div className="footer-column footer-contact">
           <h3>CONTACT SOLAR WAVE</h3>
@@ -52,7 +54,7 @@ const Footer = () => {
         <span>© {new Date().getFullYear()} Solar Wave. All rights reserved.</span>
         <span>Scheme eligibility and benefits are subject to current official rules and approvals.</span>
         <span className="footer-credit">Developed by <a href="https://thekividigital.com/" target="_blank" rel="noopener noreferrer">The Kivi Digital</a></span>
-        <a href="/#top">Back to top ↑</a>
+        <a href={siteBase + '#top'}>Back to top ↑</a>
       </div>
     </footer>
   )

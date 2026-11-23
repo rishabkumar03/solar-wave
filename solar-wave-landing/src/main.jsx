@@ -7,7 +7,7 @@ import HomeSolarPage from './pages/HomeSolarPage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/solar-for-home" element={<HomeSolarPage />} />

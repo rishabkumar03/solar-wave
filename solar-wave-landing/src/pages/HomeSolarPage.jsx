@@ -80,7 +80,7 @@ function HomeSolarPage() {
               </p>
               <div className="home-solar-hero-actions">
                 <a className="button button-primary" href="#home-options">Explore home options <span aria-hidden="true">↓</span></a>
-                <a className="button button-secondary" href="/#contact">Talk to Solar Wave</a>
+                <a className="button button-secondary" href={import.meta.env.BASE_URL + '#contact'}>Talk to Solar Wave</a>
               </div>
               <p className="home-solar-independent-note">Solar Wave is an independent service provider. Final system scope, savings, eligibility, and approvals depend on your requirements and current official rules.</p>
             </div>
@@ -194,7 +194,7 @@ function HomeSolarPage() {
               <h2>Bring your questions. <span>We’ll start there.</span></h2>
               <p>Share what you know about your electricity use and what you want to understand about home solar.</p>
             </div>
-            <a className="button button-primary" href="/#contact">Contact Solar Wave <span aria-hidden="true">↗</span></a>
+            <a className="button button-primary" href={import.meta.env.BASE_URL + '#contact'}>Contact Solar Wave <span aria-hidden="true">↗</span></a>
           </div>
         </section>
       </main>

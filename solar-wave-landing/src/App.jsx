@@ -133,7 +133,7 @@ function App() {
                   <p className="card-kicker">FOR HOMEOWNERS</p>
                   <h3>Solar for your home</h3>
                   <p>Explore how rooftop solar may fit your home, electricity use, and available roof area.</p>
-                  <a className="text-link" href="/solar-for-home">Explore home solar <Icon name="arrow" size={17} /></a>
+                  <a className="text-link" href={import.meta.env.BASE_URL + 'solar-for-home/'}>Explore home solar <Icon name="arrow" size={17} /></a>
                 </div>
               </article>
               <article className="solution-card">
