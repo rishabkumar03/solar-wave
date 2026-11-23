@@ -26,17 +26,20 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: solar-wave-landing/package-lock.json
 
       - name: Install dependencies
         run: npm ci
+        working-directory: solar-wave-landing
 
       - name: Build Vite site
         run: npm run build
+        working-directory: solar-wave-landing
 
       - name: Prepare the home solar route for static hosting
         run: |
-          mkdir -p dist/solar-for-home
-          cp dist/index.html dist/solar-for-home/index.html
+          mkdir -p solar-wave-landing/dist/solar-for-home
+          cp solar-wave-landing/dist/index.html solar-wave-landing/dist/solar-for-home/index.html
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -44,7 +47,7 @@ jobs:
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist
+          path: solar-wave-landing/dist
 
   deploy:
     environment:
