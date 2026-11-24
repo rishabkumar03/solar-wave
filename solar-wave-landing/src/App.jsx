@@ -154,7 +154,7 @@ function App() {
           <div className="scheme-banner-frame">
             <img
               className="scheme-banner-image"
-              src="https://res.cloudinary.com/gicu3fz6/image/upload/v1795260694/%E0%A4%B8%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%AF_%E0%A4%98%E0%A4%B0.jpg.jpg"
+              src="https://res.cloudinary.com/gicu3fz6/image/upload/v1795519564/%E0%A4%B8%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%AF_%E0%A4%98%E0%A4%B0_2.jpg.jpg"
               alt="PM Surya Ghar campaign banner with the Government of India scheme artwork, clean-energy pledge, and Prime Minister Narendra Modi."
               width="1896"
               height="296"
