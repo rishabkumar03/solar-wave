@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { iconAssets } from '../App'
 
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbya3yd66S_GCarsNIlOMtdElafZnl5d-ZwKj1ErztfOsVdaZ2Eutk8C7UviPls8ZdKt/exec'
+
 const whatsappLink = 'https://wa.me/919835474174?text=Hello%20Solar%20Wave%2C%20I%27d%20like%20to%20discuss%20rooftop%20solar.'
 
 const Icon = ({ name, size = 22 }) => {
@@ -29,12 +31,11 @@ function EnquiryForm() {
     const payload = {
       name: String(fields.get('name') || '').trim(),
       phone: String(fields.get('phone') || '').trim(),
+      email: String(fields.get('email') || '').trim(),
       interest: String(fields.get('interest') || ''),
       message: String(fields.get('message') || '').trim(),
-      source: 'Solar Wave website',
-      submittedAt: new Date().toISOString(),
     }
-    const endpoint = import.meta.env.VITE_LEAD_ENDPOINT
+    const endpoint = import.meta.env.VITE_LEAD_ENDPOINT || SCRIPT_URL
 
     if (!endpoint) {
       setStatus({
@@ -48,12 +49,15 @@ function EnquiryForm() {
     try {
       const response = await fetch(endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        // text/plain keeps this a simple cross-origin request for Apps Script.
+        // no-cors makes the response opaque, so its JSON body cannot be inspected here.
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(payload),
       })
-      if (!response.ok) throw new Error('The form endpoint returned an error.')
+      if (response.type !== 'opaque' && !response.ok) throw new Error('The form endpoint returned an error.')
       form.reset()
-      setStatus({ kind: 'success', message: 'Thank you. Your enquiry has been sent to Solar Wave.' })
+      setStatus({ kind: 'success', message: 'Thank you. Your enquiry request has been sent. Solar Wave will get back to you soon.' })
     } catch {
       setStatus({
         kind: 'error',
@@ -81,16 +85,20 @@ function EnquiryForm() {
             <input name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="+91" required pattern="(?:\+91|91|0)?[6-9][0-9]{9}" title="Enter a valid Indian mobile number." />
           </label>
           <label>
-            <span>I’m interested in</span>
-            <select name="interest" defaultValue="" required>
-              <option value="" disabled>Select one</option>
-              <option value="Home rooftop solar">Home solar</option>
-              <option value="Business rooftop solar">Business solar</option>
-              <option value="Solar partnership">Partnership</option>
-              <option value="Other solar enquiry">Something else</option>
-            </select>
+            <span>Email address <small>(optional)</small></span>
+            <input name="email" type="email" autoComplete="email" placeholder="you@example.com" />
           </label>
         </div>
+        <label>
+          <span>I’m interested in</span>
+          <select name="interest" defaultValue="" required>
+            <option value="" disabled>Select one</option>
+            <option value="Home rooftop solar">Home solar</option>
+            <option value="Business rooftop solar">Business solar</option>
+            <option value="Solar partnership">Partnership</option>
+            <option value="Other solar enquiry">Something else</option>
+          </select>
+        </label>
         <label>
           <span>Anything you’d like us to know <small>(optional)</small></span>
           <textarea name="message" rows="3" placeholder="Tell us about your roof, site, or question." />
